@@ -1,0 +1,88 @@
+body{
+  display: flex;
+ margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  
+  /* Background gradient */
+  background: linear-gradient(180deg, #0b0f14 0%, #071017 60%);
+  
+  /* Optional subtle noise overlay (like marjo's terminal effect) */
+  background-image: 
+    linear-gradient(180deg, #0b0f14 0%, #071017 60%), /* main gradient */
+    url('https://www.transparenttextures.com/patterns/asfalt-light.png'); /* subtle texture */
+    
+  background-repeat: repeat;
+  background-size: auto;
+  color: #e6eef6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(3,7,11,0.6);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* For accent highlights like terminal style */
+.accent {
+  color: #6be1a2;
+  font-family: "Source Code Pro", monospace;
+  font-weight: 700;
+}
+header{
+  background-color: rgb(10, 11, 11);
+  padding: 25px;
+  color:rgb(0, 0, 0);
+  font-size: x-large;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+p{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: x-large;
+  color: rgb(255, 255, 255);
+  text-align: left;
+}
+.social-media{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: large;
+  color: rgb(0, 0, 0);
+}
+.social-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  padding: 10px 16px;
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+/* Colors */
+.fb { background: #1877F2; }
+.ig { background: #E4405F; }
+.li { background: #0A66C2; }
+.gh { background: #222; }
+
+.btn:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
+}
+
+.right{
+      width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left{
+      width: 50%;
+}
