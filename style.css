@@ -76,13 +76,8 @@ p{
   transform: translateY(-2px);
 }
 
-.right{
-      width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.left{
-      width: 50%;
+.Profile {
+  border-radius: 190%;
+  width: 120px;
+  height: 130px;
 }
