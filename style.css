@@ -1,16 +1,17 @@
-body{
-  display: flex;
- margin: 0;
+body {
+  margin: 0;
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  
+
   /* Background gradient */
-  background: linear-gradient(180deg, #0b0f14 0%, #071017 60%);
-  
+  background: linear-gradient(180deg, #6a82a0 0%, #e9e9e9 60%);
+
   /* Optional subtle noise overlay (like marjo's terminal effect) */
-  background-image: 
-    linear-gradient(180deg, #0b0f14 0%, #071017 60%), /* main gradient */
-    url('https://www.transparenttextures.com/patterns/asfalt-light.png'); /* subtle texture */
-    
+  background-image:
+    linear-gradient(180deg, #273749 0%, #467a9f 60%),
+    /* main gradient */
+    url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+  /* subtle texture */
+
   background-repeat: repeat;
   background-size: auto;
   color: #e6eef6;
@@ -18,12 +19,41 @@ body{
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
 }
+
 .card {
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 6px 18px rgba(3,7,11,0.6);
-  border: 1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 6px 18px rgba(3, 7, 11, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+nav {
+  width: 100vw;
+  height: 80px;
+  gap: 111px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav a {
+color: white;
+    border: 1px solid #06131363;
+    padding: 25px;
+    border-radius: 23px;
+    background: #293b3b;
+    text-decoration: none;
+}
+
+
+#home {
+  display: flex;
+  text-decoration: none;
+}
+#about{
+  display: flex;
+  text-decoration: none;
 }
 
 /* For accent highlights like terminal style */
@@ -32,46 +62,60 @@ body{
   font-family: "Source Code Pro", monospace;
   font-weight: 700;
 }
-header{
+
+header {
   background-color: rgb(10, 11, 11);
   padding: 40px;
-  color:rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
   font-size: x-large;
   font-weight: bold;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  position:absolute;
+  position: absolute;
 }
-p{
+
+p {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: xx-large;
   color: rgb(255, 255, 255);
   text-align: center;
 }
-.social-media{
+
+.social-media {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: large;
   color: rgb(0, 0, 0);
 }
+
 .social-buttons {
   display: flex;
   gap: 12px;
 }
 
 .btn {
-  padding: 50px 46px;
+  padding: 50px 90px;
   text-decoration: none;
   font-weight: 600;
   color: white;
   border-radius: 8px;
   transition: 0.3s;
-  position: relative;
 }
 
 /* Colors */
-.fb { background: #1877F2; }
-.ig { background: #E4405F; }
-.li { background: #023b74; }
-.gh { background: #222; }
+.fb {
+  background: #1877F2;
+}
+
+.ig {
+  background: #E4405F;
+}
+
+.li {
+  background: #023b74;
+}
+
+.gh {
+  background: #222;
+}
 
 .btn:hover {
   opacity: 0.8;
@@ -83,21 +127,25 @@ p{
   height: 550px;
   object-fit: cover;
   border: #071017;
-  box-shadow: #e6eef6;
+  box-shadow: #ff0000;
   border-radius: 500px;
 }
-.right{
+
+.right {
   width: 900px;
   height: 700px;
 }
-h2{
+
+h2 {
   text-align: center;
 }
-h1{
+
+h1 {
   text-align: center;
 }
-.highlight{
+
+.highlight {
   background-color: #a9b0c3;
-  font-weight:bold;
+  font-weight: lighter;
   padding: 2px 4px;
 }
