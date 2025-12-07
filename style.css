@@ -7,7 +7,7 @@ body {
 
   /* Optional subtle noise overlay (like marjo's terminal effect) */
   background-image:
-    linear-gradient(180deg, #273749 0%, #467a9f 60%),
+    linear-gradient(180deg, #416287 0%, #000000 60%),
     /* main gradient */
     url('https://www.transparenttextures.com/patterns/asfalt-light.png');
   /* subtle texture */

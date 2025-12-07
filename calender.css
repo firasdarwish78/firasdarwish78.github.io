@@ -1,0 +1,118 @@
+/* General Reset and Font */
+body {
+    font-family: 'Georgia', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+/* --- Music Theme Background --- */
+
+/* This background creates a visual suggestion of sheet music */
+.calendar-container {
+    width: 90%;
+    max-width: 800px;
+    padding: 30px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    
+    /* Background Pattern: Lightly lines to resemble sheet music */
+    background-image: linear-gradient(to bottom, 
+                      #e0e0e0 1px, transparent 1px, transparent 18px),
+                      linear-gradient(to bottom, 
+                      #e0e0e0 19px, transparent 19px, transparent 36px),
+                      linear-gradient(to bottom, 
+                      #e0e0e0 37px, transparent 37px, transparent 54px),
+                      linear-gradient(to bottom, 
+                      #e0e0e0 55px, transparent 55px, transparent 72px),
+                      linear-gradient(to bottom, 
+                      #e0e0e0 73px, transparent 73px, transparent 90px);
+    background-size: 100% 90px;
+    background-repeat: repeat-y;
+    background-position: top;
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #6c757d;
+}
+
+.month-title {
+    font-size: 2.8em;
+    color: #495057;
+    letter-spacing: 5px;
+    font-weight: bold;
+    /* You can add a decorative element here, like a music note icon */
+}
+
+/* Calendar Grid */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.day-header, .day-cell {
+    padding: 10px 5px;
+    text-align: center;
+    border: 1px solid rgba(173, 216, 230, 0.4); /* Light blue border */
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+/* Day Headers (SUN, MON, etc.) */
+.day-header {
+    background-color: #343a40; /* Dark color */
+    color: #f8f9fa;
+    font-weight: bold;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    border: none;
+    border-bottom: 3px solid #007bff; /* Blue accent */
+}
+
+/* Weekend Styling */
+/* Saturday */
+.calendar-grid > :nth-child(7n) {
+    color: #007bff; /* Blue for Saturday */
+}
+/* Sunday */
+.calendar-grid > :nth-child(7n + 1) {
+    color: #dc3545; /* Red for Sunday */
+}
+
+/* Day Cells (Dates) */
+.day-cell {
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2em;
+    min-height: 60px; /* Give room for notes/events */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.day-cell:hover:not(.empty-cell) {
+    background-color: #fff3cd; /* Light yellow hover effect */
+}
+
+.empty-cell {
+    background-color: #f4f4f4;
+    border: none;
+    cursor: default;
+}
+
+/* Styling for the 1st of the month (Jan 1 is a Thursday, the 4th cell) */
+.calendar-grid > :nth-child(4) {
+    font-weight: bold;
+    background-color: #e9ecef;
+}
