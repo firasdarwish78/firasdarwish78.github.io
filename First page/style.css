@@ -1,23 +1,7 @@
 body {
-  margin: 0;
-  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-
-  /* Background gradient */
-  background: linear-gradient(180deg, #6a82a0 0%, #e9e9e9 60%);
-
-  /* Optional subtle noise overlay (like marjo's terminal effect) */
-  background-image:
-    linear-gradient(180deg, #416287 0%, #000000 60%),
-    /* main gradient */
-    url('https://www.transparenttextures.com/patterns/asfalt-light.png');
-  /* subtle texture */
-
-  background-repeat: repeat;
-  background-size: auto;
-  color: #e6eef6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  min-height: 100vh;
+  background-image: url(pic.jpg.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .card {
