@@ -1,0 +1,54 @@
+
+body{
+background: linear-gradient(150deg, rgb(6 55 102), rgb(37 7 7));
+
+}
+h1{
+  text-align: center;
+  color: rgb(87, 138, 183);
+}
+.progress-container {
+    font-family: Arial, sans-serif;
+    background: #fd7575;
+    width: 60%;
+    max-width: 500px;
+    padding: 40px;
+    border-radius: 80px;
+    border: 5px solid rgb(139, 69, 19);
+    color: white;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+  .skill-name {
+      font-size: 18px;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: blanchedalmond;
+  }
+
+  .progress-container {
+    width: 350px;
+    height: 30px;
+    background-color: rgb(83 90 191 / 0%);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+
+.progress-bar {
+    height: 100%;
+    background-color: rgb(26 75 175);
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    font-weight: bold;
+    border-radius: 52px;
+    animation: fill 2s ease forwards;
+}
+
+  @keyframes fill {
+      from {
+          width: 0;
+      }
+  }
