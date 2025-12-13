@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Firas Darwich</title>
+    <title>Firas Darwich - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/png" href="8347432.png"> for index
@@ -68,12 +68,14 @@
         </div>
     </section>
     <!--about section-->
-    <section id="about">
+    <section id="about" class="scroll-reveal">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-in-up">
+                <h2 class="section-title">About Me</h2>
+                <div class="title-underline"></div>
             </div>
             <div class="about-content">
-                <div class="about-text">
+                <div class="about-text fade-in-left">
                     <h3>Get to Know Me</h3>
                     <p>I'm a passionate first-year Software Engineering student with a strong drive to master the
                         fundamentals of programming and problem-solving. Currently focused on building a solid
@@ -107,7 +109,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="about-stats">
+                <div class="about-stats fade-in-right">
                     <div class="stat-card">
                         <div class="stat-number">1</div>
                         <div class="stat-label">Years Learning</div>
@@ -125,9 +127,9 @@
         </div>
     </section>
 
-    <section id="skills">
+    <section id="skills" class="scroll-reveal">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-in-up">
                 <h2 class="section-title">My Skills</h2>
                 <div class="title-underline"></div>
                 <p class="section-description">Technologies and tools I work with</p>
@@ -235,7 +237,7 @@
             </div>
         </div>
 
-        <section class="learning-section">
+        <section class="learning-section fade-in-up">
             <h2 class="category-title">
                 <span class="category-icon">
                     <i class="fas fa-graduation-cap"></i>
@@ -272,7 +274,7 @@
                 </div>
             </div>
         </section>
-        <div class="tech-icons">
+        <div class="tech-icons fade-in-up">
             <div class="tech-icon">
                 <i class="fab fa-html5"></i>
                 <span>HTML5</span>
@@ -286,9 +288,6 @@
                 <span>GitHub</span>
             </div>
         </div>
-        </div>
-    </section>
-    </div>
     </section>
 
     <section id="projects">
@@ -364,15 +363,15 @@
         </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="scroll-reveal">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-in-up">
                 <h2 class="section-title">Get In Touch</h2>
                 <div class="title-underline"></div>
                 <p class="section-description">Feel free to reach out for collaborations or just a friendly hello</p>
             </div>
             <div class="contact-content">
-                <div class="contact-info">
+                <div class="contact-info fade-in-left">
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
@@ -393,4 +392,79 @@
                             <a href="tel:+216 50 557 048" class="contact-link">Call Now</a>
                         </div>
                     </div>
-                   
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Added JavaScript for smooth scrolling and scroll reveal animations -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for scroll reveal animations
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    
+                    // Add active class to all animated children
+                    const animatedElements = entry.target.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .scale-in');
+                    animatedElements.forEach((el, index) => {
+                        setTimeout(() => {
+                            el.classList.add('active');
+                        }, index * 100);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections that need animation
+        document.querySelectorAll('.scroll-reveal').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Active nav link highlighting on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('header nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
