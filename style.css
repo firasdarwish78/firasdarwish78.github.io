@@ -1983,7 +1983,6 @@ footer {
   background: rgba(0, 0, 0, 0.95);
   padding: 30px 5%;
   text-align: center;
-  border-top: 2px solid rgba(0, 246, 212, 0.2);
 }
 
 .footer-content p {
@@ -2230,6 +2229,14 @@ footer {
 
 .btn-project i {
   font-size: 16px;
+}
+
+
+
+ p.wa {
+  margin: 0;
+  color: white;
+  text-align: center;
 }
 
 
