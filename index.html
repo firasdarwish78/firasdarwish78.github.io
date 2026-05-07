@@ -1,371 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Firas Darwich</title>
+    <title>FIRAS Voyage - Luxury Travel Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="download.png"> for index
 </head>
-
 <body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <svg class="airplane-animation" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <style>
+                        @keyframes planeMove {
+                            0% { transform: translateX(-200px) translateY(0); opacity: 0; }
+                            10% { opacity: 1; }
+                            90% { opacity: 1; }
+                            100% { transform: translateX(200px) translateY(-50px); opacity: 0; }
+                        }
+                        .airplane { animation: planeMove 3s ease-in-out forwards; }
+                        @keyframes trailDraw {
+                            0% { stroke-dashoffset: 1000; }
+                            100% { stroke-dashoffset: 0; }
+                        }
+                        .trail { animation: trailDraw 3s ease-in-out forwards; }
+                    </style>
+                </defs>
+                <path class="trail" d="M 10 80 Q 50 20, 90 40" stroke="#d4af37" stroke-width="2" fill="none" stroke-dasharray="1000"/>
+                <g class="airplane" transform="translate(0, 0)">
+                    <path d="M 50 30 L 45 50 L 50 45 L 55 50 Z" fill="#d4af37"/>
+                    <path d="M 40 45 L 50 45 L 60 45" stroke="#d4af37" stroke-width="2"/>
+                </g>
+            </svg>
+            <h2 class="loading-title">FIRAS Voyage</h2>
+            <p class="loading-text">Preparing your journey...</p>
+        </div>
+    </div>
 
-    <header>
-        <img src="epi.jpg.png" id="logo" alt="Logo">
-        <nav>
-            <ul>
-                <li>
-                    <a href="#home">Home</a>
-                </li>
-                <li>
-                    <a href="#about">About me</a>
-                </li>
-                <li>
-                    <a href="#skills">Skills</a>
-                </li>
-                <li>
-                    <a href="#projects">Projects</a>
-                </li>
-                <li>
-                    <a href="my contact/contact.html">Contact me</a>
-                </li>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">FIRAS Voyage</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link" onclick="showPage('home')">Home</a></li>
+                <li><a href="#destinations" class="nav-link" onclick="showPage('destinations')">Destinations</a></li>
+                <li><a href="#packages" class="nav-link" onclick="showPage('packages')">Packages</a></li>
+                <li><a href="#contact" class="nav-link" onclick="showPage('contact')">Contact</a></li>
+                <li><button class="nav-signin" onclick="openSignIn()">Sign In</button></li>
             </ul>
-        </nav>
-    </header>
-    
-    <section id="home">
-        <div class="container">
-            <div class="left">
-                <div class="greeting">
-                    <h3>Hello There 👋</h3>
-                </div>
-                <h1>I'm Firas Darwich</h1>
-                <h2>Welcome to My Profile!</h2>
-                <p>I'm a highly motivated 1st-Year Software Engineering Student building a strong foundation in
-                    <span class="highlight">C language</span> and foundational concepts like data structures and
-                    algorithms.
-                    My passion is simple: I love breaking down problems and using code to create solutions. I am eager
-                    to contribute,
-                    learn from experienced professionals, and tackle real-world challenges.
-                    I'm ready to bring my energy and rapid learning skills to your team.
-                </p>
-
-                <div class="icons">
-                    <a href="https://www.facebook.com/firasdarwish.firasdarwish/" aria-label="Facebook"><i
-                            class="fab fa-facebook"></i></a>
-                    <a href="https://github.com/adembssaa-creator" target="_blank" aria-label="GitHub"><i
-                            class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/firas-darwich-9a87a5343/" aria-label="LinkedIn"><i
-                            class="fab fa-linkedin"></i></a>
-                    <a href="https://wa.me/21624742498" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-            <div class="right">
-                <img class="profile-image" src="firas pic.png" alt="Firas Darwich">
-            </div>
         </div>
-    </section>
-    
-    <section id="about">
-        <div class="container">
-            <div class="section-header">
+    </nav>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- HOME PAGE -->
+        <section id="home" class="page active">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <p class="hero-subtitle">Welcome to Luxury Travel</p>
+                        <h1 class="hero-title">Discover Extraordinary Journeys</h1>
+                        <p class="hero-description">Experience the world's most exclusive destinations curated for discerning travelers. From pristine beaches to mountain peaks, we craft unforgettable moments.</p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary" onclick="showPage('packages')">Explore Packages</button>
+                            <button class="btn btn-secondary" onclick="showPage('contact')">Get in Touch</button>
+                            <a href="https://youtu.be/Zcx247sfxPM?si=DsgpKzFFRuJh9qjL" class="btn btn-outline">Watch Film </a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663630274769/VowcXQcAwSrGGweZmWuhmA/hero-tropical-luxury-jQycE52NLmY6oTFqrpC3mK.webp" alt="Luxury tropical destination">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Destinations -->
+            <section class="featured-destinations">
+                <div class="section-header">
+                    <p class="section-subtitle">Our Selection</p>
+                    <h2 class="section-title">Featured Destinations</h2>
+                    <div class="gold-line"></div>
+                </div>
+                <div class="destinations-grid">
+                    <div class="destination-card">
+                        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663630274769/VowcXQcAwSrGGweZmWuhmA/hero-tropical-luxury-jQycE52NLmY6oTFqrpC3mK.webp" alt="Maldives">
+                        <h3>Maldives Paradise</h3>
+                        <p>Crystal waters and overwater villas</p>
+                        <span class="price">$5,999</span>
+                        <a href="#destinations" onclick="showPage('destinations')" class="learn-more">Learn More →</a>
+                    </div>
+                    <div class="destination-card">
+                        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663630274769/VowcXQcAwSrGGweZmWuhmA/hero-mountain-luxury-e7uxayhvAciR5CfGXAjW6V.webp" alt="Alpine">
+                        <h3>Alpine Retreat</h3>
+                        <p>Mountain peaks and luxury lodges</p>
+                        <span class="price">$4,499</span>
+                        <a href="#destinations" onclick="showPage('destinations')" class="learn-more">Learn More →</a>
+                    </div>
+                    <div class="destination-card">
+                        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663630274769/VowcXQcAwSrGGweZmWuhmA/hero-city-luxury-jMWBP2qrpVEQw39sQVjkyp.webp" alt="City">
+                        <h3>Urban Elegance</h3>
+                        <p>Cosmopolitan cities and fine dining</p>
+                        <span class="price">$3,799</span>
+                        <a href="#destinations" onclick="showPage('destinations')" class="learn-more">Learn More →</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why Choose Us -->
+            <section class="why-choose-us">
+                <div class="section-header">
+                    <p class="section-subtitle">Our Expertise</p>
+                    <h2 class="section-title">Why Choose LuxeVoyage</h2>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-number">1</div>
+                        <h3>Curated Experiences</h3>
+                        <p>Hand-picked destinations and accommodations for the most discerning travelers.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-number">2</div>
+                        <h3>24/7 Concierge</h3>
+                        <p>Dedicated support throughout your journey to ensure every moment is perfect.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-number">3</div>
+                        <h3>Exclusive Access</h3>
+                        <p>VIP privileges and insider access to experiences unavailable to the general public.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Newsletter -->
+            <section class="newsletter">
+                <h2>Stay Updated with Exclusive Offers</h2>
+                <p>Subscribe to receive our latest luxury travel packages and insider tips.</p>
+                <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-gold">Subscribe</button>
+                </form>
+            </section>
+        </section>
+
+        <!-- DESTINATIONS PAGE -->
+        <section id="destinations" class="page">
+            <div class="page-header">
+                <p class="section-subtitle">Explore the World</p>
+                <h1 class="section-title">Luxury Destinations</h1>
+                <div class="gold-line"></div>
+                <p class="page-description">Discover handpicked luxury destinations across the globe. Each location offers unique experiences and world-class accommodations.</p>
             </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Get to Know Me</h3>
-                    <p>I'm a passionate first-year Software Engineering student with a strong drive to master the
-                        fundamentals of programming and problem-solving. Currently focused on building a solid
-                        foundation in C programming, data structures, and algorithms.</p>
-                    <p>My journey in software engineering is driven by curiosity and a genuine love for coding. I
-                        believe that great software starts with understanding the basics deeply, and I'm committed to
-                        continuous learning and improvement.</p>
-                    <p>When I'm not coding, I enjoy exploring new technologies, contributing to open-source projects,
-                        and connecting with fellow developers to share knowledge and experiences.</p>
-                    <div class="about-details">
-                        <div class="detail-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <div>
-                                <strong>Education</strong>
-                                <p>1st Year Software Engineering</p>
-                            </div>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <strong>Location</strong>
-                                <p>Sousse,Tunisia</p>
-                            </div>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-laptop-code"></i>
-                            <div>
-                                <strong>Focus</strong>
-                                <p>C Programming & Algorithms</p>
-                            </div>
-                        </div>
+
+            <div class="filter-section">
+                <span>Filter by Region:</span>
+                <button class="filter-btn active" onclick="filterDestinations('all')">All Destinations</button>
+                <button class="filter-btn" onclick="filterDestinations('asia')">Asia</button>
+                <button class="filter-btn" onclick="filterDestinations('europe')">Europe</button>
+                <button class="filter-btn" onclick="filterDestinations('middle-east')">Middle East</button>
+                <button class="filter-btn" onclick="filterDestinations('africa')">Africa</button>
+            </div>
+
+            <div id="destinationsGrid" class="destinations-full-grid">
+                <!-- Populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- PACKAGES PAGE -->
+        <section id="packages" class="page">
+            <div class="page-header">
+                <p class="section-subtitle">Curated Collections</p>
+                <h1 class="section-title">Luxury Travel Packages</h1>
+                <div class="gold-line"></div>
+                <p class="page-description">Handcrafted travel experiences designed for the most discerning travelers. Each package includes premium accommodations, exclusive experiences, and personalized service.</p>
+            </div>
+
+            <div class="filter-section">
+                <span>Filter by Duration:</span>
+                <button class="filter-btn active" onclick="filterPackages('all')">All Packages</button>
+                <button class="filter-btn" onclick="filterPackages('4')">4 Days</button>
+                <button class="filter-btn" onclick="filterPackages('5')">5 Days</button>
+                <button class="filter-btn" onclick="filterPackages('7')">7 Days</button>
+            </div>
+
+            <div id="packagesGrid" class="packages-grid">
+                <!-- Populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- CONTACT PAGE -->
+        <section id="contact" class="page">
+            <div class="page-header">
+                <p class="section-subtitle">Get in Touch</p>
+                <h1 class="section-title">Contact Our Specialists</h1>
+                <div class="gold-line"></div>
+                <p class="page-description">Have questions about our destinations or packages? Our luxury travel specialists are here to help create your perfect journey.</p>
+            </div>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">📍</div>
+                        <h3>Office Location</h3>
+                        <p>123 Luxury Avenue<br>Monaco, MC 98000<br>Principality of Monaco</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">📞</div>
+                        <h3>Phone</h3>
+                        <p>+377 93 15 93 93<br>Available 24/7</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">✉️</div>
+                        <h3>Email</h3>
+                        <p>info@luxevoyage.com<br>bookings@luxevoyage.com</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🕐</div>
+                        <h3>Business Hours</h3>
+                        <p>Monday - Friday: 9:00 AM - 8:00 PM<br>Saturday - Sunday: 10:00 AM - 6:00 PM</p>
                     </div>
                 </div>
-                <div class="about-stats">
-                    <div class="stat-card">
-                        <div class="stat-number">1</div>
-                        <div class="stat-label">Years Learning</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">0</div>
-                        <div class="stat-label">Projects Completed</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Commitment</div>
-                    </div>
+
+                <div class="contact-form-container">
+                    <form class="contact-form" onsubmit="handleContactSubmit(event)">
+                        <div class="form-row">
+                            <input type="text" placeholder="Full Name" required>
+                            <input type="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-row">
+                            <input type="tel" placeholder="Phone Number">
+                            <select required>
+                                <option value="">Select a destination</option>
+                                <option value="maldives">Maldives</option>
+                                <option value="swiss-alps">Swiss Alps</option>
+                                <option value="dubai">Dubai</option>
+                                <option value="bali">Bali</option>
+                                <option value="paris">Paris</option>
+                                <option value="santorini">Santorini</option>
+                                <option value="custom">Custom Itinerary</option>
+                            </select>
+                        </div>
+                        <textarea placeholder="Tell us about your dream vacation..." rows="6" required></textarea>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section id="skills">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">My Skills</h2>
-                <div class="title-underline"></div>
-                <p class="section-description">Technologies and tools I work with</p>
-            </div>
-            <div class="skills-grid" style="display: flex">
-                <div class="skill-category">
-                    <div class="category-header">
-                        <i class="fas fa-code"></i>
-                        <h3>Programming Languages</h3>
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>How far in advance should I book?</h3>
+                        <p>We recommend booking 2-3 months in advance for the best availability and pricing. However, we can accommodate last-minute bookings based on availability.</p>
                     </div>
-                    <div class="skills-list">
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">C Language</span>
-                                <span class="skill-level">Intermediate</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 45%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">HTML</span>
-                                <span class="skill-level">Advanced</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 75%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">CSS</span>
-                                <span class="skill-level">Advanced</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 70%"></div>
-                            </div>
-                        </div>
+                    <div class="faq-item">
+                        <h3>What payment methods do you accept?</h3>
+                        <p>We accept all major credit cards, bank transfers, and cryptocurrency for your convenience.</p>
                     </div>
-                </div>
-
-                <div class="skill-category">
-                    <div class="category-header">
-                        <i class="fas fa-database"></i>
-                        <h3>Core Concepts</h3>
+                    <div class="faq-item">
+                        <h3>Is travel insurance included?</h3>
+                        <p>Travel insurance is available as an optional add-on. We recommend it for all international trips.</p>
                     </div>
-                    <div class="skills-list">
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Data Structures</span>
-                                <span class="skill-level">Intermediate</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 40%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Algorithms</span>
-                                <span class="skill-level">Intermediate</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 30%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Problem Solving</span>
-                                <span class="skill-level">Expert</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 100%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category" style=" width: 305px;">
-                    <div class="category-header">
-                        <i class="fas fa-tools"></i>
-                        <h3>Tools & Technologies</h3>
-
-                    </div>
-                    <div class="skills-list">
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">GitHub</span>
-                                <span class="skill-level">advanced</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 70%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">VS Code</span>
-                                <span class="skill-level">Advanced</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <section class="learning-section">
-            <h2 class="category-title">
-                <span class="category-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                </span>
-                Currently Learning
-            </h2>
-
-            <div class="learning-cards">
-                <div class="learning-card">
-                    <div class="learning-badge">In Progress</div>
-                    <h3>Advanced Data Structures</h3>
-                    <p>Trees, graphs, and hash tables for complex problem-solving</p>
-                    <div class="learning-progress">
-                        <div class="learning-bar" style="width: 40%;"></div>
-                    </div>
-                </div>
-
-                <div class="learning-card">
-                    <div class="learning-badge">Planned</div>
-                    <h3>React.js</h3>
-                    <p>Building modern, component-based user interfaces</p>
-                    <div class="learning-progress">
-                        <div class="learning-bar" style="width: 0%;"></div>
-                    </div>
-                </div>
-
-                <div class="learning-card">
-                    <div class="learning-badge">Planned</div>
-                    <h3>Backend Development</h3>
-                    <p>Node.js and database management systems</p>
-                    <div class="learning-progress">
-                        <div class="learning-bar" style="width: 0%;"></div>
+                    <div class="faq-item">
+                        <h3>Can I customize my package?</h3>
+                        <p>Absolutely! All our packages can be customized to match your preferences, budget, and travel style.</p>
                     </div>
                 </div>
             </div>
         </section>
-        <div class="tech-icons">
-            <div class="tech-icon">
-                <i class="fab fa-html5"></i>
-                <span>HTML</span>
-            </div>
-            <div class="tech-icon">
-                <i class="fab fa-css3-alt"></i>
-                <span>CSS</span>
-            </div>
-            <div class="tech-icon">
-                <i class="fab fa-github"></i>
-                <span>GitHub</span>
-            </div>
-        </div>
-        </div>
-    </section>
     </div>
-    </section>
 
-    <section id="projects">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">My Projects</h2>
-                <div class="title-underline"></div>
-                <p class="section-description">A showcase of my recent work and accomplishments</p>
-            </div>
-            <div class="project-card">
-                <div class="project-image">
-                    <i class="fas fa-globe"></i>
-                </div>
-                <div class="project-content">
-                    <h3>Personal Portfolio Website</h3>
-                    <p>A responsive portfolio website built with HTML and CSS to showcase my skills, projects, and
-                        professional experience.</p>
-                    <div class="project-tags">
-                        <span class="tag">HTML</span>
-                        <span class="tag">CSS</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#home" class="btn-project">
-                            <i class="fas fa-eye"></i> View Live
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <h2>To Do Soon..!</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-calculator"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Calculator Application</h3>
-                        <p>A fully functional calculator built in C with support for basic arithmetic operations and
-                            advanced scientific functions.</p>
-                        <div class="project-tags">
-                            <span class="tag">C Language</span>
-                            <span class="tag">Math</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/firasdarwish78/firasdarwish78.github.io" target="_blank"
-                                class="btn-project">
-                                <i class="fab fa-github"></i> View Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
+    <!-- Sign In Modal -->
+    <div id="signInModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSignIn()">&times;</span>
+            <h2>Welcome Back</h2>
+            <form onsubmit="handleSignIn(event)">
+                <input type="email" placeholder="Email Address" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn btn-gold">Sign In</button>
+            </form>
+            <button class="btn btn-secondary" onclick="closeSignIn()">Cancel</button>
+        </div>
+    </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-list-check"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Task Manager</h3>
-                        <p>A command-line task management system using linked lists to store and organize daily tasks
-                            efficiently.</p>
-                        <div class="project-tags">
-                            <span class="tag">C Language</span>
-                            <span class="tag">Data Structures</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/firasdarwish78/firasdarwish78.github.io" target="_blank"
-                                class="btn-project">
-                                <i class="fab fa-github"></i> View Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#" onclick="showPage('destinations')">Destinations</a></li>
+                    <li><a href="#" onclick="showPage('packages')">Packages</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ul>
             </div>
         </div>
-        <footer>
-        <p class="wa">&copy; 2025 Firas Darwich All rights reserved.</p>    
-        </footer>
-    </section>
+        <div class="footer-bottom">
+            <p>&copy; 2026 LuxeVoyage. All rights reserved. | Privacy Policy | Terms of Service</p>
+        </div>
+    </footer>
 
-
-                   
+    <script src="main.js"></script>
+</body>
+</html>
